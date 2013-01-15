@@ -23,7 +23,7 @@
                         select RunTest(instance, method);
 
             if (Request.ContentType.Contains("json")) 
-                return Json(tests.ToArray());
+                return Json(tests.ToArray(), JsonRequestBehavior.AllowGet);
 
             return this.View(tests.ToArray());
         }
